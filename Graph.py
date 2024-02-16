@@ -20,7 +20,7 @@ class Graph:
             self.add_node(node2)
         # Append a tuple of (node, weight)
         self.adj_list[node1].append((node2, weight))
-        self.adj_list[node2].append((node1, weight))  # Assuming undirected graph
+        self.adj_list[node2].append((node1, weight)) 
 
     # DFS Implementation
     def dfs(self, start):
@@ -32,7 +32,6 @@ class Graph:
             if vertex not in visited:
                 print(vertex, end=' ')
                 visited.add(vertex)
-                # Correctly process each neighbor from the adjacency list tuples
                 stack.extend(neighbor for neighbor, _ in self.adj_list[vertex] if neighbor not in visited)
         print()
 
@@ -47,7 +46,6 @@ class Graph:
             if vertex not in visited:
                 print(vertex, end=' ')
                 visited.add(vertex)
-                # Correctly access neighbors
                 queue.extend(neighbor for neighbor, _ in self.adj_list[vertex] if neighbor not in visited)
         print()
 
